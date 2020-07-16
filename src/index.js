@@ -1,10 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/app/app.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/app/app.jsx';
+
+const places = [
+  `Beautiful luxurious apartment at great location`,
+  `Wood and stone place`,
+  `Canal View Prinsengracht`,
+  `Nice, cozy, warm big bed apartment`,
+  `Private room`
+];
 
 const Settings = {
-  AMOUNT: 312
+  PLACE_AMOUNT: 321
 };
 
-
-ReactDOM.render(<App placesAmount={Settings.AMOUNT} />, document.querySelector(`#root`));
+ReactDOM.render(<App places={places} placeAmount={Settings.PLACE_AMOUNT} />, document.querySelector(`#root`));

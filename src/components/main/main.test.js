@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Main from './main';
+import Main from './main.jsx';
 
 describe(`Main`, () => {
   it(`should render correctly with two places`, () => {

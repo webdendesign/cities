@@ -1,14 +1,15 @@
 import React from 'react';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import Main from '../main/main.jsx';
 
 const App = (props) => {
-  const {placesAmount} = props;
-  return <Main placesAmount={placesAmount} />;
+  const {places, placeAmount} = props;
+  return <Main places={places} placeAmount={placeAmount} onTitleClick={() => {}} />;
 };
 
 App.propTypes = {
-  placesAmount: PropTypes.number.isRequired,
+  places: PropTypes.arrayOf(PropTypes.string).isRequired,
+  placeAmount: PropTypes.number.isRequired
 };
 
 export default App;
