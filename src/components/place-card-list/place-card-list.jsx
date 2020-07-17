@@ -46,17 +46,15 @@ class PlaceCardList extends React.PureComponent {
 }
 
 PlaceCardList.propTypes = {
-  offers: PropTypes.arrayOf(
-    PropTypes.shape({
-      propertyName: PropTypes.string.isRequired,
-      propertyType: PropTypes.string.isRequired,
-      price: PropTypes.number.isRequired,
-      rating: PropTypes.number.isRequired,
-      isPremium: PropTypes.bool.isRequired,
-      picture: PropTypes.string.isRequired,
-      id: PropTypes.string.isRequired
-    })
-  )
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    propertyName: PropTypes.string.isRequired,
+    propertyType: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    isPremium: PropTypes.bool.isRequired,
+    picture: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired
+  }))
 };
 
 export default PlaceCardList;

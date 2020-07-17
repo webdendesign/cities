@@ -1,19 +1,20 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Main from './main.jsx';
+import offers from '../../mocks/test-offers.js';
 
 describe(`Main`, () => {
-  it(`should render correctly with two places`, () => {
-    const places = [`Some cozy place`, `Another comfortable room`];
+  it(`should render correctly with four places`, () => {
     const tree = renderer
-      .create(<Main places={places} placeAmount={214} onTitleClick={() => {}} />)
+      .create(<Main offers={offers} placeAmount={214} onTitleClick={() => {}} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it(`should render correctly with three places`, () => {
-    const places = [`Little house`, `Luxirous appartment`, `Tiny room`];
+
+  it(`should render correctly with two places`, () => {
+    const newPlaces = [offers[0], offers[2]];
     const tree = renderer
-      .create(<Main places={places} placeAmount={115} onTitleClick={() => {}} />)
+      .create(<Main offers={newPlaces} placeAmount={23} onTitleClick={() => {}} />)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
