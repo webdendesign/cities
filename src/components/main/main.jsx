@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Main = (props) => {
-  const {places, placeAmount, onTitleClick} = props;
+  const {offers, placeAmount, onTitleClick} = props;
 
   return (
     <div className="page page--gray page--main">
@@ -88,9 +88,9 @@ const Main = (props) => {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">{
-                places.map((place) => {
+                offers.map((offer) => {
                   return (
-                    <article className="cities__place-card place-card" key={place}>
+                    <article className="cities__place-card place-card" key={offer}>
                       <div className="place-card__mark">
                         <span>Premium</span>
                       </div>
@@ -119,7 +119,7 @@ const Main = (props) => {
                           </div>
                         </div>
                         <h2 className="place-card__name">
-                          <a href="#">{place}</a>
+                          <a href="#">{offer}</a>
                         </h2>
                         <p className="place-card__type">Apartment</p>
                       </div>

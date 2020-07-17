@@ -6,7 +6,7 @@ export default [
     rating: 4,
     isPremium: true,
     picture: `apartment-01.jpg`,
-    id: uuidv4()
+    // id: uuidv4()
   },
   {
     propertyName: `Wood and stone place`,
@@ -15,7 +15,7 @@ export default [
     rating: 4,
     isPremium: false,
     picture: `room.jpg`,
-    id: uuidv4()
+    // id: uuidv4()
   },
   {
     propertyName: `Canal View Prinsengracht`,
@@ -24,7 +24,7 @@ export default [
     rating: 4,
     isPremium: false,
     picture: `apartment-02.jpg`,
-    id: uuidv4()
+    // id: uuidv4()
   },
   {
     propertyName: `Nice, cozy, warm big bed apartment`,
@@ -33,6 +33,6 @@ export default [
     rating: 5,
     isPremium: true,
     picture: `apartment-03.jpg`,
-    id: uuidv4()
+    // id: uuidv4()
   }
 ];
