@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const PlaceCard = (props) => {
-  const {propertyName, propertyType, price, isPremium, picture} = props.place;
+  const {propertyName, propertyType, price, isPremium, picture} = props.offer;
   const {onMouseEnter, onMouseLeave} = props;
 
   return (
     <article
       className="cities__place-card place-card"
       onMouseEnter={() => {
-        onMouseEnter(props.place);
+        onMouseEnter(props.offer);
       }}
       onMouseLeave={() => {
         onMouseLeave();
@@ -56,7 +56,7 @@ const PlaceCard = (props) => {
 };
 
 PlaceCard.propTypes = {
-  place: PropTypes.shape({
+  offer: PropTypes.shape({
     propertyName: PropTypes.string.isRequired,
     propertyType: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
