@@ -5,13 +5,23 @@ import Main from '../main/main.jsx';
 const onTitleClick = () => {};
 
 const App = (props) => {
-  const {places, placeAmount} = props;
+  const {offers, placeAmount} = props;
 
-  return <Main places={places} placeAmount={placeAmount} onTitleClick={onTitleClick} />;
+  return <Main offers={offers} placeAmount={placeAmount} onTitleClick={onTitleClick} />;
 };
 
 App.propTypes = {
-  places: PropTypes.arrayOf(PropTypes.string).isRequired,
+  offers: PropTypes.arrayOf(
+    PropTypes.shape({
+      propertyName: PropTypes.string.isRequired,
+      propertyType: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      rating: PropTypes.number.isRequired,
+      isPremium: PropTypes.bool.isRequired,
+      picture: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired
+    })
+  ),
   placeAmount: PropTypes.number.isRequired
 };
 
