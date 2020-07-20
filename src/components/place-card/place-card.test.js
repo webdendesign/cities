@@ -1,12 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import PlaceCard from './place-card.jsx';
-import offers from '../../mocks/test-offers.js';
+import {MemoryRouter} from 'react-router-dom';
+import PlaceCard from './place-card';
+import offers from '../../mocks/test-offers';
 
 describe(`PlaceCard`, () => {
   it(`should render correctly`, () => {
     const tree = renderer
-      .create(<PlaceCard offer={offers[0]} onMouseLeave={() => {}} onMouseEnter={() => {}} />)
+      .create(<MemoryRouter>
+        <PlaceCard offer={offers[0]} onMouseLeave={() => {}} onMouseEnter={() => {}} />
+      </MemoryRouter>
+      )
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
