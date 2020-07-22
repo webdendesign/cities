@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 const PlaceCard = (props) => {
-  const {propertyName, propertyType, price, isPremium, titlePhoto} = props.offer;
+  const {propertyName, propertyType, price, isPremium, titlePhoto} = props.place;
   const {onMouseEnter, onMouseLeave} = props;
   let propertyTypeString;
   switch (propertyType) {
@@ -25,7 +25,7 @@ const PlaceCard = (props) => {
       <article
         className="cities__place-card place-card"
         onMouseEnter={() => {
-          onMouseEnter(props.offer);
+          onMouseEnter(props.place);
         }}
         onMouseLeave={() => {
           onMouseLeave();
@@ -71,7 +71,7 @@ const PlaceCard = (props) => {
 };
 
 PlaceCard.propTypes = {
-  offer: PropTypes.shape({
+  place: PropTypes.shape({
     id: PropTypes.string.isRequired,
     propertyName: PropTypes.string.isRequired,
     propertyType: PropTypes.oneOf([`apartment`, `room`, `house`, `hotel`]),
@@ -99,3 +99,5 @@ PlaceCard.propTypes = {
 };
 
 export default PlaceCard;
+
+

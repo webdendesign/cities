@@ -6,16 +6,16 @@ import OfferDetails from '../offer-details/offer-details.jsx';
 
 
 const App = (props) => {
-  const {placeAmount, offers} = props;
+  const {placeAmount, places} = props;
 
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path="/">
-          <Main offers={offers} placeAmount={placeAmount} onTitleClick={() => {}} />
+          <Main places={places} placeAmount={placeAmount} onTitleClick={() => {}} />
         </Route>
         <Route exact path="/dev-offer">
-          <OfferDetails offer={offers[0]} />
+          <OfferDetails place={places[0]} />
         </Route>
       </Switch>
     </BrowserRouter>
@@ -24,7 +24,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
+  places: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     propertyName: PropTypes.string.isRequired,
     propertyType: PropTypes.oneOf([`apartment`, `room`, `house`, `hotel`]),

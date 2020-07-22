@@ -26,15 +26,15 @@ class PlaceCardList extends React.PureComponent {
   }
 
   render() {
-    const {offers} = this.props;
+    const {places} = this.props;
 
     return (
       <div className="cities__places-list places__list tabs__content">
         {
-          offers.map((offer) => (
+          places.map((place) => (
             <PlaceCard
-              key={offer.id}
-              offer={offer}
+              key={place.id}
+              place={place}
               onMouseEnter={this.handleCardHover}
               onMouseLeave={this.handleCardUnhover}
             />
@@ -46,7 +46,7 @@ class PlaceCardList extends React.PureComponent {
 }
 
 PlaceCardList.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
+  places: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     propertyName: PropTypes.string.isRequired,
     propertyType: PropTypes.oneOf([`apartment`, `room`, `house`, `hotel`]),

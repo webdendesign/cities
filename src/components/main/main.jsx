@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import PlaceCardList from '../place-card-list/place-card-list.jsx';
 
 const Main = (props) => {
-  const {offers, placeAmount, onTitleClick} = props;
-
+  const {places, placeAmount, onTitleClick} = props;
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -89,7 +88,7 @@ const Main = (props) => {
                 </ul>
               </form>
 
-              <PlaceCardList offers={offers} />
+              <PlaceCardList places={places} />
 
             </section>
             <div className="cities__right-section">
@@ -103,9 +102,33 @@ const Main = (props) => {
 };
 
 Main.propTypes = {
-  offers: PropTypes.array.isRequired,
+  places: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    propertyName: PropTypes.string.isRequired,
+    propertyType: PropTypes.oneOf([`apartment`, `room`, `house`, `hotel`]),
+    propertyText: PropTypes.arrayOf(PropTypes.string),
+    price: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
+    isPremium: PropTypes.bool.isRequired,
+    bedroomsAmount: PropTypes.number.isRequired,
+    guestMax: PropTypes.number.isRequired,
+    propertyItems: PropTypes.arrayOf(PropTypes.string),
+    host: PropTypes.shape({
+      name: PropTypes.string,
+      avatar: PropTypes.string,
+      isSuper: PropTypes.bool
+    }).isRequired,
+    titlePhoto: PropTypes.string.isRequired,
+    photos: PropTypes.arrayOf(PropTypes.shape({
+      title: PropTypes.string,
+      id: PropTypes.string
+    })
+    )
+  })
+  ),
   placeAmount: PropTypes.number.isRequired,
   onTitleClick: PropTypes.func.isRequired
 };
 
 export default Main;
+

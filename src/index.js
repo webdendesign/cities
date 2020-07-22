@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app.jsx';
-import offers from "./mocks/offers.js";
+import places from './mock/offers';
 
-const Settings = {
-  PLACE_AMOUNT: 321
-};
-
-ReactDOM.render(<App offers={offers} placeAmount={Settings.PLACE_AMOUNT} />, document.querySelector(`#root`));
+ReactDOM.render(<App placeAmount={321} places={places} />, document.querySelector(`#root`));
